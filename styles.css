@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('https://i.pinimg.com/originals/8e/46/15/8e46150f790fbefe438d9c2767c32ad1.gif') repeat;
+    overflow-x: hidden;
+    color: #e6e6f2;
+    text-shadow: 
+        0 0 5px #b766ff, 
+        0 0 10px #b766ff;
+}
+
+header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    padding: 20px 0;
+    margin: 30px 0;
+    text-shadow: 
+        0 0 5px #b766ff, 
+        0 0 10px #b766ff;
+}
+
+.navbar {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.navbar a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #502580;
+    color: #e6e6f2;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.15s, transform 0.15s;
+    text-shadow: 
+        0 0 5px #b766ff, 
+        0 0 10px #b766ff;
+}
+
+.navbar a:hover {
+    background-color: #6f3399;
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #502580;
+    color: #e6e6f2;
+    text-shadow: 
+        0 0 5px #b766ff, 
+        0 0 10px #b766ff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.home-content {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #e6e6f2;
+    text-align: left;
+    position: absolute;
+    top: 40%; /* Decreased from 50% to 40% to move it upwards */
+    left: 50%;
+    width: 120vmin; 
+    height: 50vmin; 
+    transform: translate(-50%, -50%);
+    text-shadow: 
+        0 0 5px #b766ff, 
+        0 0 10px #b766ff;
+    white-space: pre-wrap;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+
+/* Cursor blinking animation */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #e6e6f2;
+    }
+}
+
+footer a, footer a:hover, .footer-icon {
+    color: inherit; /* Ensures the link takes on the color of its parent (in this case, the footer) */
+    text-decoration: none; /* Removes the underlining commonly applied to links */
+    transition: color 0.3s; /* Smoothens the color transition when hovering over the link */
+}
+
+footer a:hover, .footer-icon:hover {
+    color: #e0e0e0; /* Brightens the color on hover */
+    text-shadow: 0 0 10px #e0e0e0, 0 0 15px #e0e0e0; /* Adds a brighter glow when hovering */
+}
