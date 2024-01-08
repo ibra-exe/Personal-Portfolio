@@ -1,5 +1,5 @@
 const typeTarget = document.getElementById("type-target");
-const fullText = "Hi, I'm Ibrahim Shaheen, Ibra for short.      a Software Engineer by day and an Alien by... well, always – because who else but an extraterrestrial could understand this Earthly code mess?";
+const fullText = "Hi, I'm Ibrahim Shaheen, Ibra for short.  a Software Engineer by day and an Alien by... well, always – because who else but an extraterrestrial could understand this Earthly code mess?";
 typeTarget.textContent = "|";
 let charIndex = 0;
 
