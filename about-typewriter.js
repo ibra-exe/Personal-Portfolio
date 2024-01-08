@@ -1,5 +1,5 @@
 const aboutTypeTarget = document.getElementById("about-type-target");
-const aboutFullText = "Your about text goes here...";
+const aboutFullText = "May 16th, 1993.\nIbrahim Shaheen aka Ibra\nSoftware Engineer | Technology Enthusiast\nInterested in:\nTechnology | AI | Automations | Digitalization\nBased in NEOM";
 let aboutCharIndex = 0;
 
 function aboutTypeChar() {
