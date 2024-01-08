@@ -97,3 +97,30 @@ footer a:hover, .footer-icon:hover {
     color: #e0e0e0; /* Brightens the color on hover */
     text-shadow: 0 0 10px #e0e0e0, 0 0 15px #e0e0e0; /* Adds a brighter glow when hovering */
 }
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#profile-pic {
+    max-width: 200px; /* Adjust as needed */
+    margin-right: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.about-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: #e6e6f2;
+    text-shadow: 0 0 5px #b766ff, 0 0 10px #b766ff;
+    white-space: pre-wrap;
+}
+
