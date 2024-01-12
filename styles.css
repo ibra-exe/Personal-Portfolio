@@ -127,3 +127,41 @@ footer a:hover, .footer-icon:hover {
     flex: 1; /* Allows this item to grow to fill the space */
     max-width: 600px; /* Optional: Adjust as needed */
 }
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 70px; /* Reduced top padding */
+}
+
+.contact-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Space between rows */
+}
+
+.contact-button {
+    font-family: 'Orbitron', sans-serif; /* Set the Orbitron font */
+    font-size: 1.3rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Fixed width for all buttons */
+    height: 50px; /* Fixed height for all buttons */
+    margin: 5px 15px; /* Space between buttons */
+    padding: 15px;
+    background-color: #502580;
+    color: #e6e6f2;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.15s, transform 0.15s;
+    text-align: center;
+}
+
+.contact-button:hover {
+    background-color: #6f3399;
+    transform: translateY(-3px);
+}
+
