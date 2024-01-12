@@ -1,5 +1,5 @@
 const aboutTypeTarget = document.getElementById("about-type-target");
-const aboutFullText = "May 16th, 1993.\n\nIbrahim Shaheen aka Ibra\n\nSoftware Engineer | Technology Enthusiast\n\nInterested in:\n\nTechnology | AI | Automations | Digitalization\n\nBased in NEOM";
+const aboutFullText = "May 16th, 1993.\n\nIbrahim Shaheen aka Ibra\n\nSoftware Engineer | Technology Enthusiast\n\nInterested in:\n\nTechnology || AI || Automations || Digitalization\n\nPeople Technology Senior Specialist, Based in NEOM";
 let aboutCharIndex = 0;
 
 function aboutTypeChar() {
