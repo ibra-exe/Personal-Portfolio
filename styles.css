@@ -103,7 +103,7 @@ footer a:hover, .footer-icon:hover {
     align-items: center; /* Vertically center the items */
     justify-content: center; /* Horizontally center the items */
     padding: 20px;
-    height: 50vh; /* Optional: Adjust the height as needed */
+    height: 55vh; /* Optional: Adjust the height as needed */
 }
 
 #profile-pic {
@@ -120,7 +120,7 @@ footer a:hover, .footer-icon:hover {
 
 .about-text {
     font-family: 'Orbitron', sans-serif; /* Set the Orbitron font */
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #e6e6f2;
     text-shadow: 0 0 5px #b766ff, 0 0 10px #b766ff;
     white-space: pre-wrap;
