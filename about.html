@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About Ibrahim Shaheen - Software Engineer and Technology Enthusiast">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"></noscript>
     <title>About</title>
 </head>
 <body style="background: transparent;">
     <div class="about-container">
-        <img src="/files/profile-web.png" alt="Ibrahim Shaheen" id="profile-pic" loading="lazy">
-        <div class="about-text" id="about-type-target"></div>
+        <div class="about-content">
+            <h2 class="about-heading">About Me</h2>
+            
+            <div class="about-grid">
+                <div class="profile-container">
+                    <div class="profile-frame">
+                        <img src="/files/profile-web.png" alt="Ibrahim Shaheen" id="profile-pic" loading="lazy">
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/ibra-exe" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/ibrahim-shaheen/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/ibrahimium" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="about-info">
+                    <div class="about-text" id="about-type-target"></div>
+                    
+                    <div class="skills-section">
+                        <h3 class="skills-heading">Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item"><i class="fas fa-code"></i> Software Engineering</div>
+                            <div class="skill-item"><i class="fas fa-robot"></i> AI</div>
+                            <div class="skill-item"><i class="fas fa-cogs"></i> Automation</div>
+                            <div class="skill-item"><i class="fas fa-digital-tachograph"></i> Digitalization</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="typewriter.js"></script>
 </body>

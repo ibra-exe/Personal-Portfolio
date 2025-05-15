@@ -36,7 +36,7 @@ function initTypewriter(targetId, text, speed = 50) {
 
 // Define text constants
 const HOME_TEXT = "Hi, I'm Ibrahim Shaheen, Ibra for short. A Software Engineer by day and an Alien by... well, always – because who else but an extraterrestrial could understand this Earthly code mess?";
-const ABOUT_TEXT = "May 16th, 1993.\n\nIbrahim Shaheen aka Ibra\n\nSoftware Engineer | Technology Enthusiast\n\nInterested in:\n\nTechnology || AI || Automations || Digitalization\n\nPeople Technology Senior Specialist, Based in NEOM";
+const ABOUT_TEXT = "Hello! I'm Ibrahim Shaheen (Ibra), a Saudi Software Engineer and Technology Enthusiast born on May 16th, 1993.\n\nCurrently working as a People Technology Senior Specialist at NEOM, I focus on implementing innovative digital solutions that enhance workplace experiences.\n\nI'm passionate about leveraging technology to solve complex problems and create meaningful impact through AI, automation, and digital transformation.";
 
 // Auto-initialize based on page
 document.addEventListener('DOMContentLoaded', function() {

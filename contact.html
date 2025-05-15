@@ -6,19 +6,69 @@
     <meta name="description" content="Contact Ibrahim Shaheen - Software Engineer and Technology Enthusiast">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"></noscript>
     <title>Contact</title>
 </head>
 <body style="background: transparent;">
     <div class="contact-container">
-        <div class="contact-row">
-            <a href="https://www.linkedin.com/in/ibrahim-shaheen/" class="contact-button" id="linkedin" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="mailto:ibra@outlook.jp" class="contact-button" id="email">Email</a>
+        <h2 class="contact-heading">Get In Touch</h2>
+        <p class="contact-intro">I'm always open to new opportunities and collaborations. Feel free to reach out through any of these channels.</p>
+        
+        <div class="contact-grid">
+            <a href="https://www.linkedin.com/in/ibrahim-shaheen/" class="contact-card" id="linkedin" target="_blank" rel="noopener">
+                <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-description">Connect professionally</div>
+            </a>
+            
+            <a href="mailto:ibra@outlook.jp" class="contact-card" id="email">
+                <div class="contact-icon"><i class="far fa-envelope"></i></div>
+                <div class="contact-label">Email</div>
+                <div class="contact-description">ibra@outlook.jp</div>
+            </a>
+            
+            <a href="https://wa.me/966505502594" class="contact-card" id="whatsapp" target="_blank" rel="noopener">
+                <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                <div class="contact-label">WhatsApp</div>
+                <div class="contact-description">Quick chat</div>
+            </a>
+            
+            <a href="https://github.com/ibra-exe" class="contact-card" id="github" target="_blank" rel="noopener">
+                <div class="contact-icon"><i class="fab fa-github"></i></div>
+                <div class="contact-label">GitHub</div>
+                <div class="contact-description">Check my code</div>
+            </a>
         </div>
-        <div class="contact-row">
-            <a href="https://wa.me/966505502594" class="contact-button" id="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
-            <a href="https://github.com/ibra-exe" class="contact-button" id="github" target="_blank" rel="noopener">GitHub</a>
+        
+        <!-- Contact form temporarily disabled
+        <div class="contact-form-container">
+            <h3 class="form-heading">Or send me a message directly</h3>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email-input" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
         </div>
+        -->
     </div>
+    
+    <!-- Form submission script temporarily disabled
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // This is where you would normally handle the form submission
+            // For now, we'll just show an alert
+            alert('Thanks for your message! This form is not yet connected to a backend.');
+        });
+    </script>
+    -->
 </body>
 </html>
