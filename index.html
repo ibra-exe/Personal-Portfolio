@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ibrahim Shaheen's personal website - Software Engineer and Technology Enthusiast">
+    <meta property="og:title" content="Ibra - Personal Website">
+    <meta property="og:description" content="Software Engineer | Technology Enthusiast | Digital Explorer">
+    <meta property="og:type" content="website">
     <title>Ibra</title>
     <link rel="stylesheet" href="styles.css"> <!-- Linking to the CSS file -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap&display=swap" rel="stylesheet">
     <!-- Linking to Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 
@@ -19,25 +23,23 @@
 </script>
 
 <body>
+    <!-- Hidden audio player for background sound -->
+    <iframe id="audioPlayer" width="1" height="1" src="https://www.youtube.com/embed/nqaRtoEs4Rg?start=9&autoplay=1&controls=0&loop=1&playlist=nqaRtoEs4Rg" title="Background Audio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="position:fixed; top:-100px; left:-100px; z-index:-1; opacity: 0.01; pointer-events: none;" loading="lazy"></iframe>
+
     <header>
         Ibra
     </header>
     <div class="navbar">
         <a href="#" onclick="loadContent('home.html')">Home</a>
+        <a href="#" onclick="loadContent('experience.html')">Experience</a>
         <a href="#" onclick="loadContent('projects.html')">Projects</a>
         <a href="#" onclick="loadContent('about.html')">About</a>
         <a href="#" onclick="loadContent('contact.html')">Contact</a>
     </div>
 
 
-    <iframe id="contentFrame" src="home.html" style="width:100%; height:70vh; border: none;"></iframe>
+    <iframe id="contentFrame" src="home.html" style="width:100%; height:70vh; border: none;" title="Page Content"></iframe>
 
-
-    <iframe width="0%" height="0%" src="https://www.youtube.com/embed/nqaRtoEs4Rg?start=9&autoplay=1&controls=0&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:fixed; top:0; left:0; z-index:-1; opacity: 0;"></iframe>
-
-    
-
-    <!-- Your content here -->
 
     <!-- Old Footer Containing Instagram -->
     <!-- <footer>
@@ -49,7 +51,7 @@
     </footer> -->
 
     <footer>
-        © 2023 Ibra | 
+        © 2025 Ibra | 
         Follow me on 
         <a href="https://x.com/ibrahimium" target="_blank" rel="noopener noreferrer">𝕏</a> | 
         Made by Ibra + AI | Exploring the Digital Cosmos

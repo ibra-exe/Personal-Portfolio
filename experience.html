@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ibrahim Shaheen's work experience and career history">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"></noscript>
+    <title>Experience</title>
+    <style>
+        .experience-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* The actual timeline (the vertical ruler) */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+        
+        /* The vertical ruler */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--glow-color);
+            box-shadow: 0 0 8px var(--glow-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            z-index: 1;
+        }
+        
+        /* Container around content */
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 60px;
+        }
+        
+        /* Place containers to the left */
+        .left {
+            left: 0;
+        }
+        
+        /* Place containers to the right */
+        .right {
+            left: 50%;
+        }
+        
+        /* Add circles on the timeline */
+        .left::after, .right::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border: 3px solid var(--glow-color);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--glow-color);
+            top: 20px;
+            z-index: 2;
+        }
+        
+        /* Add circle positions to the left container */
+        .left::after {
+            right: -15px;
+        }
+        
+        /* Add circle positions to the right container */
+        .right::after {
+            left: -15px;
+        }
+        
+        /* The actual content */
+        .content {
+            position: relative;
+            background-color: rgba(80, 37, 128, 0.4);
+            border-radius: 8px;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(183, 102, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(183, 102, 255, 0.3);
+        }
+        
+        .company {
+            font-family: var(--font-special);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+        
+        .position {
+            font-family: var(--font-special);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .period {
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .description {
+            line-height: 1.5;
+        }
+        
+        /* Media queries for responsiveness */
+        @media screen and (max-width: 768px) {
+            /* Place the timeline to the left */
+            .timeline::before {
+                left: 31px;
+            }
+            
+            /* Full width containers */
+            .container {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 25px;
+            }
+            
+            /* Make sure all containers are located to the right */
+            .right, .left {
+                left: 0;
+            }
+            
+            /* Make sure all circles are located on the left */
+            .right::after, .left::after {
+                left: 17px;
+            }
+        }
+    </style>
+</head>
+<body style="background: transparent;">
+    <div class="experience-container">
+        <div class="timeline">
+            <div class="container right">
+                <div class="content">
+                    <h3 class="company">NEOM</h3>
+                    <div class="position">People Technology Senior Specialist</div>
+                    <div class="period">2022 - Present</div>
+                    <p class="description">Leading digital transformation initiatives for HR technology systems. Implementing and optimizing enterprise solutions to streamline people processes and enhance employee experience.</p>
+                </div>
+            </div>
+            
+            <div class="container left">
+                <div class="content">
+                    <h3 class="company">Previous Company</h3>
+                    <div class="position">Software Engineer</div>
+                    <div class="period">2020 - 2022</div>
+                    <p class="description">Developed and maintained enterprise applications. Collaborated with cross-functional teams to deliver high-quality software solutions that met business requirements.</p>
+                </div>
+            </div>
+            
+            <div class="container right">
+                <div class="content">
+                    <h3 class="company">Another Company</h3>
+                    <div class="position">Junior Developer</div>
+                    <div class="period">2018 - 2020</div>
+                    <p class="description">Assisted in the development of web applications. Contributed to codebase improvements and learned various frameworks and technologies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

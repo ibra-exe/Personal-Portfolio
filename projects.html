@@ -3,13 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ibrahim Shaheen's projects and portfolio">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"></noscript>
     <title>Projects</title>
+    <style>
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .project-card {
+            background-color: rgba(80, 37, 128, 0.4);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 800px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(183, 102, 255, 0.3);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(183, 102, 255, 0.3);
+        }
+        
+        .project-title {
+            font-family: var(--font-special);
+            color: var(--text-color);
+            margin-top: 0;
+        }
+        
+        .project-description {
+            line-height: 1.6;
+        }
+        
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 15px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.15s;
+        }
+        
+        .project-link:hover {
+            background-color: var(--primary-hover);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .project-card {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body style="background: transparent;">
-    <div class="content">
-        <!-- Your Projects Content Here -->
-        <p>Projects content goes here...</p>
+    <div class="projects-container">
+        <div class="project-card">
+            <h2 class="project-title">Personal Website</h2>
+            <p class="project-description">A responsive personal website built with HTML, CSS, and JavaScript. Features a clean, cyberpunk-inspired design with typewriter effects and responsive layouts.</p>
+            <a href="#" class="project-link">View Project</a>
+        </div>
+        
+        <div class="project-card" id="project-2">
+            <h2 class="project-title">Project 2</h2>
+            <p class="project-description">This is a placeholder for your second project. Add a description of what technologies you used and what problems you solved.</p>
+            <a href="#" class="project-link">View Project</a>
+        </div>
+        
+        <div class="project-card" id="project-3">
+            <h2 class="project-title">Project 3</h2>
+            <p class="project-description">This is a placeholder for your third project. Add a description of what technologies you used and what problems you solved.</p>
+            <a href="#" class="project-link">View Project</a>
+        </div>
     </div>
+    
+    <script>
+        // You can add JavaScript here to load projects dynamically if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            // You can add animation or dynamic content loading here
+        });
+    </script>
 </body>
 </html>

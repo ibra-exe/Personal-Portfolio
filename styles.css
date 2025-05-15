@@ -1,23 +1,28 @@
+:root {
+    --primary-color: #502580;
+    --primary-hover: #6f3399;
+    --text-color: #e6e6f2;
+    --glow-color: #b766ff;
+    --font-main: 'Arial', sans-serif;
+    --font-special: 'Orbitron', sans-serif;
+}
+
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-main);
     background: url('https://i.pinimg.com/originals/8e/46/15/8e46150f790fbefe438d9c2767c32ad1.gif') repeat;
     overflow-x: hidden;
-    color: #e6e6f2;
-    text-shadow: 
-        0 0 5px #b766ff, 
-        0 0 10px #b766ff;
+    color: var(--text-color);
+    text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
 }
 
 header {
-    font-family: 'Orbitron', sans-serif;
+    font-family: var(--font-special);
     font-size: 3rem;
     text-align: center;
     padding: 20px 0;
     margin: 30px 0;
-    text-shadow: 
-        0 0 5px #b766ff, 
-        0 0 10px #b766ff;
+    text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
 }
 
 .navbar {
@@ -29,103 +34,92 @@ header {
     display: inline-block;
     padding: 10px 20px;
     margin: 0 10px;
-    background-color: #502580;
-    color: #e6e6f2;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.15s, transform 0.15s;
-    text-shadow: 
-        0 0 5px #b766ff, 
-        0 0 10px #b766ff;
+    text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
 }
 
 .navbar a:hover {
-    background-color: #6f3399;
+    background-color: var(--primary-hover);
     transform: translateY(-3px);
 }
 
 footer {
     text-align: center;
     padding: 20px 0;
-    background-color: #502580;
-    color: #e6e6f2;
-    text-shadow: 
-        0 0 5px #b766ff, 
-        0 0 10px #b766ff;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
     position: absolute;
     bottom: 0;
     width: 100%;
 }
 
 .home-content {
-    font-family: 'Orbitron', sans-serif;
+    font-family: var(--font-special);
     font-size: 2rem;
-    color: #e6e6f2;
+    color: var(--text-color);
     text-align: left;
     position: absolute;
-    top: 40%; /* Decreased from 50% to 40% to move it upwards */
+    top: 40%;
     left: 50%;
     width: 120vmin; 
     height: 50vmin; 
     transform: translate(-50%, -50%);
-    text-shadow: 
-        0 0 5px #b766ff, 
-        0 0 10px #b766ff;
+    text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
     white-space: pre-wrap;
     overflow: hidden;
     animation: blink-caret 0.75s step-end infinite;
 }
 
-
 /* Cursor blinking animation */
 @keyframes blink-caret {
-    from, to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: #e6e6f2;
-    }
+    from, to { border-color: transparent; }
+    50% { border-color: var(--text-color); }
 }
 
 footer a, footer a:hover, .footer-icon {
-    color: inherit; /* Ensures the link takes on the color of its parent (in this case, the footer) */
-    text-decoration: none; /* Removes the underlining commonly applied to links */
-    transition: color 0.3s; /* Smoothens the color transition when hovering over the link */
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 footer a:hover, .footer-icon:hover {
-    color: #e0e0e0; /* Brightens the color on hover */
-    text-shadow: 0 0 10px #e0e0e0, 0 0 15px #e0e0e0; /* Adds a brighter glow when hovering */
+    color: #e0e0e0;
+    text-shadow: 0 0 10px #e0e0e0, 0 0 15px #e0e0e0;
 }
 
 .about-container {
     display: flex;
-    align-items: center; /* Vertically center the items */
-    justify-content: center; /* Horizontally center the items */
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    height: 55vh; /* Optional: Adjust the height as needed */
+    height: 55vh;
 }
 
 #profile-pic {
-    flex: 0 0 200px; /* Flex-grow: 0, Flex-shrink: 0, Flex-basis: 200px */
-    max-width: 20%; /* Ensures the image is responsive and doesn't overflow its container */
-    margin-right: 20px; /* Adjust or remove as needed */
+    flex: 0 0 200px;
+    max-width: 20%;
+    margin-right: 20px;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
 .fade-in {
-    opacity: 100;
+    opacity: 1 !important;
 }
 
 .about-text {
-    font-family: 'Orbitron', sans-serif; /* Set the Orbitron font */
+    font-family: var(--font-special);
     font-size: 1.3rem;
-    color: #e6e6f2;
-    text-shadow: 0 0 5px #b766ff, 0 0 10px #b766ff;
+    color: var(--text-color);
+    text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
     white-space: pre-wrap;
-    flex: 1; /* Allows this item to grow to fill the space */
-    max-width: 600px; /* Optional: Adjust as needed */
+    flex: 1;
+    max-width: 600px;
 }
 
 .contact-container {
@@ -133,27 +127,27 @@ footer a:hover, .footer-icon:hover {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    padding-top: 70px; /* Reduced top padding */
+    padding-top: 70px;
 }
 
 .contact-row {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px; /* Space between rows */
+    margin-bottom: 20px;
 }
 
 .contact-button {
-    font-family: 'Orbitron', sans-serif; /* Set the Orbitron font */
+    font-family: var(--font-special);
     font-size: 1.3rem;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 150px; /* Fixed width for all buttons */
-    height: 50px; /* Fixed height for all buttons */
-    margin: 5px 15px; /* Space between buttons */
+    width: 150px;
+    height: 50px;
+    margin: 5px 15px;
     padding: 15px;
-    background-color: #502580;
-    color: #e6e6f2;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.15s, transform 0.15s;
@@ -161,7 +155,66 @@ footer a:hover, .footer-icon:hover {
 }
 
 .contact-button:hover {
-    background-color: #6f3399;
+    background-color: var(--primary-hover);
     transform: translateY(-3px);
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        font-size: 2rem;
+        margin: 15px 0;
+    }
+    
+    .navbar a {
+        padding: 8px 15px;
+        margin: 0 5px;
+        font-size: 0.9rem;
+    }
+    
+    .home-content {
+        font-size: 1.5rem;
+        width: 90vmin;
+    }
+    
+    .about-container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    #profile-pic {
+        max-width: 50%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .contact-row {
+        flex-direction: column;
+    }
+    
+    .contact-button {
+        width: 200px;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 1.5rem;
+    }
+    
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .navbar a {
+        margin: 5px;
+    }
+    
+    .home-content {
+        font-size: 1.2rem;
+    }
 }
 
