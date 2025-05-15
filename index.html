@@ -24,21 +24,21 @@
 
 <body>
     <!-- Hidden audio player for background sound -->
-    <iframe id="audioPlayer" width="1" height="1" src="https://www.youtube.com/embed/nqaRtoEs4Rg?start=9&autoplay=1&controls=0&loop=1&playlist=nqaRtoEs4Rg" title="Background Audio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="position:fixed; top:-100px; left:-100px; z-index:-1; opacity: 0.01; pointer-events: none;" loading="lazy"></iframe>
+    <iframe id="audioPlayer" width="1" height="1" src="https://www.youtube.com/embed/nqaRtoEs4Rg?start=9&autoplay=1&controls=0&loop=1&playlist=nqaRtoEs4Rg" title="Background Audio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy"></iframe>
 
     <header>
         Ibra
     </header>
     <div class="navbar">
         <a href="#" onclick="loadContent('home.html')">Home</a>
+        <a href="#" onclick="loadContent('about.html')">About</a>
         <a href="#" onclick="loadContent('experience.html')">Experience</a>
         <a href="#" onclick="loadContent('projects.html')">Projects</a>
-        <a href="#" onclick="loadContent('about.html')">About</a>
         <a href="#" onclick="loadContent('contact.html')">Contact</a>
     </div>
 
 
-    <iframe id="contentFrame" src="home.html" style="width:100%; height:70vh; border: none;" title="Page Content"></iframe>
+    <iframe id="contentFrame" src="home.html" title="Page Content"></iframe>
 
 
     <!-- Old Footer Containing Instagram -->

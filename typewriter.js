@@ -8,34 +8,22 @@ function initTypewriter(targetId, text, speed = 50) {
     const typeTarget = document.getElementById(targetId);
     if (!typeTarget) return;
     
-    typeTarget.textContent = "|";
+    typeTarget.textContent = "";
     let charIndex = 0;
 
     function typeChar() {
         if (charIndex < text.length) {
-            typeTarget.textContent = text.slice(0, charIndex + 1) + "|";
+            typeTarget.textContent = text.slice(0, charIndex + 1);
             charIndex++;
             setTimeout(typeChar, speed);
-        } else {
-            typeTarget.textContent = text;
-            toggleCursorBlinking();
         }
-    }
-
-    function toggleCursorBlinking() {
-        if (typeTarget.textContent.endsWith("_")) {
-            typeTarget.textContent = text;
-        } else {
-            typeTarget.textContent = text + "_";
-        }
-        setTimeout(toggleCursorBlinking, 500);
     }
 
     typeChar();
 }
 
 // Define text constants
-const HOME_TEXT = "Hi, I'm Ibrahim Shaheen, Ibra for short. A Software Engineer by day and an Alien by... well, always – because who else but an extraterrestrial could understand this Earthly code mess?";
+const HOME_TEXT = "Hi, I'm Ibrahim Shaheen, Ibra for short. A Software Engineer by day and an Alien by... well, always – because let's face it, only an extraterrestrial could make sense of this human code chaos. Turns out my spaceship crashed here, so I decided to debug your Earth programs instead.";
 const ABOUT_TEXT = "Hello! I'm Ibrahim Shaheen (Ibra), a Saudi Software Engineer and Technology Enthusiast born on May 16th, 1993.\n\nCurrently working as a People Technology Senior Specialist at NEOM, I focus on implementing innovative digital solutions that enhance workplace experiences.\n\nI'm passionate about leveraging technology to solve complex problems and create meaningful impact through AI, automation, and digital transformation.";
 
 // Auto-initialize based on page
