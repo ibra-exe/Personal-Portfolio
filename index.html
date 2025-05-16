@@ -21,12 +21,85 @@
     function loadContent(page) {
         document.getElementById("contentFrame").src = page;
     }
+    
+    // Audio player handling
+    document.addEventListener('DOMContentLoaded', function() {
+        const audioPlayer = document.getElementById('audioPlayer');
+        const audioToggle = document.getElementById('audio-toggle');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        
+        // Function to update button state
+        function updateAudioButton(isPlaying) {
+            if (isPlaying) {
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'inline-block';
+            } else {
+                playIcon.style.display = 'inline-block';
+                pauseIcon.style.display = 'none';
+            }
+        }
+        
+        // Try to play audio automatically
+        const playPromise = audioPlayer.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                // Autoplay started successfully
+                updateAudioButton(true);
+            }).catch(error => {
+                // Auto-play was prevented
+                updateAudioButton(false);
+                
+                // Show UI to let the user manually start playback
+                document.body.addEventListener('click', () => {
+                    audioPlayer.play().then(() => {
+                        updateAudioButton(true);
+                    });
+                }, { once: true });
+            });
+        }
+        
+        // Toggle play/pause when button is clicked
+        audioToggle.addEventListener('click', function() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                updateAudioButton(true);
+            } else {
+                audioPlayer.pause();
+                updateAudioButton(false);
+            }
+        });
+        
+        // Update button if audio ends (though it should loop)
+        audioPlayer.addEventListener('ended', function() {
+            updateAudioButton(false);
+        });
+        
+        // Update button if audio is paused elsewhere
+        audioPlayer.addEventListener('pause', function() {
+            updateAudioButton(false);
+        });
+        
+        // Update button if audio starts playing elsewhere
+        audioPlayer.addEventListener('play', function() {
+            updateAudioButton(true);
+        });
+    });
 </script>
 
 <body>
     <!-- Hidden audio player for background sound -->
+    <!-- Commented out YouTube audio
     <iframe id="audioPlayer" width="1" height="1" src="https://www.youtube.com/embed/nqaRtoEs4Rg?start=9&autoplay=1&controls=0&loop=1&playlist=nqaRtoEs4Rg" title="Background Audio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy"></iframe>
-
+    -->
+    
+    <!-- Local audio file player -->
+    <audio id="audioPlayer" autoplay loop>
+        <source src="files/Tarantulas.mp3#t=9" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
     <header>
         Ibra
     </header>
@@ -67,6 +140,15 @@
                 </div>
                 <div class="footer-credit">Made with <i class="fas fa-code"></i> + <i class="fas fa-robot"></i></div>
             </div>
+        </div>
+        
+        <!-- Audio controls -->
+        <div id="audio-controls">
+            <button id="audio-toggle" aria-label="Play or pause background music">
+                <i class="fas fa-play" id="play-icon"></i>
+                <i class="fas fa-pause" id="pause-icon" style="display: none;"></i>
+                <i class="fas fa-music" id="music-icon"></i>
+            </button>
         </div>
     </footer>
     
