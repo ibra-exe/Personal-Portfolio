@@ -49,7 +49,7 @@ header {
 
 footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 6px 0;
     background-color: rgba(80, 37, 128, 0.8);
     color: var(--text-color);
     text-shadow: 0 0 5px var(--glow-color);
@@ -67,9 +67,9 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
 }
 
 .footer-section {
@@ -84,36 +84,40 @@ footer {
 
 .copyright {
     font-family: var(--font-special);
-    font-size: 0.9rem;
-    margin-bottom: 3px;
+    font-size: 0.8rem;
+    margin-bottom: 1px;
+    text-align: left;
 }
 
 .footer-tagline {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     opacity: 0.8;
+    text-align: left;
 }
 
 .social-links-footer {
     display: flex;
-    gap: 12px;
-    margin-bottom: 3px;
+    gap: 10px;
+    margin-bottom: 1px;
+    justify-content: flex-end;
 }
 
 .social-links-footer a {
     color: var(--text-color);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     transition: color 0.3s, transform 0.3s;
 }
 
 .social-links-footer a:hover {
     color: var(--glow-color);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     text-shadow: 0 0 10px var(--glow-color);
 }
 
 .footer-credit {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     opacity: 0.8;
+    text-align: right;
 }
 
 .footer-credit i {
@@ -341,6 +345,95 @@ footer a:hover {
         width: 100%;
         max-width: 250px;
     }
+    
+    .footer-content {
+        flex-direction: row;
+        gap: 20px;
+        padding: 0 20px;
+        max-width: 100%;
+    }
+    
+    .footer-section {
+        width: auto;
+    }
+    
+    .footer-section:first-child {
+        align-items: flex-start;
+    }
+    
+    .footer-section:last-child {
+        align-items: flex-end;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .profile-container {
+        margin-bottom: 20px;
+    }
+    
+    .profile-frame {
+        max-width: 250px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-card {
+        padding: 20px 15px;
+    }
+    
+    .contact-heading {
+        font-size: 2rem;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px;
+    }
+    
+    /* Place the timeline to the left */
+    .timeline::before {
+        left: 31px;
+    }
+    
+    /* Full width containers */
+    .container {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 25px;
+    }
+    
+    /* Make sure all containers are located to the right */
+    .right, .left {
+        left: 0;
+    }
+    
+    /* Make sure all circles are located on the left */
+    .right::after, .left::after {
+        left: 17px;
+    }
+    
+    .project-card {
+        padding: 15px;
+    }
+    
+    #audio-controls {
+        bottom: 55px;
+        left: 10px;
+    }
+    
+    #audio-toggle {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -376,6 +469,18 @@ footer a:hover {
     
     .skills-heading {
         font-size: 1.3rem;
+    }
+    
+    .footer-content {
+        padding: 0 15px;
+    }
+    
+    .social-links-footer {
+        gap: 10px;
+    }
+    
+    .social-links-footer a {
+        font-size: 1.1rem;
     }
 }
 
@@ -708,51 +813,6 @@ footer a:hover {
     transform: translateY(-3px);
 }
 
-@media screen and (max-width: 768px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .profile-container {
-        margin-bottom: 20px;
-    }
-    
-    .profile-frame {
-        max-width: 250px;
-    }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-card {
-        padding: 20px 15px;
-    }
-    
-    .contact-heading {
-        font-size: 2rem;
-    }
-    
-    .contact-form input,
-    .contact-form textarea {
-        padding: 10px;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .footer-section, .footer-section:last-child {
-        align-items: center;
-    }
-}
-
 /* Experience Page Styles */
 .experience-container {
     max-width: 1000px;
@@ -866,30 +926,6 @@ footer a:hover {
     line-height: 1.5;
 }
 
-@media screen and (max-width: 768px) {
-    /* Place the timeline to the left */
-    .timeline::before {
-        left: 31px;
-    }
-    
-    /* Full width containers */
-    .container {
-        width: 100%;
-        padding-left: 60px;
-        padding-right: 25px;
-    }
-    
-    /* Make sure all containers are located to the right */
-    .right, .left {
-        left: 0;
-    }
-    
-    /* Make sure all circles are located on the left */
-    .right::after, .left::after {
-        left: 17px;
-    }
-}
-
 /* Hidden audio player */
 #audioPlayer {
     position: fixed;
@@ -966,16 +1002,10 @@ body.transparent-bg {
     background-color: var(--primary-hover);
 }
 
-@media screen and (max-width: 768px) {
-    .project-card {
-        padding: 15px;
-    }
-}
-
 /* Audio controls */
 #audio-controls {
     position: fixed;
-    bottom: 70px;
+    bottom: 60px;
     left: 20px;
     z-index: 100;
     transition: all 0.3s ease;
@@ -985,14 +1015,14 @@ body.transparent-bg {
     background-color: rgba(80, 37, 128, 0.7);
     border: 1px solid rgba(183, 102, 255, 0.3);
     border-radius: 30px;
-    padding: 10px 15px;
+    padding: 8px 12px;
     color: var(--text-color);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
 }
@@ -1009,26 +1039,14 @@ body.transparent-bg {
 
 #music-icon {
     margin-left: 5px;
-    font-size: 0.9em;
+    font-size: 0.8em;
     opacity: 0.8;
 }
 
 .audio-label {
     font-family: var(--font-special);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: var(--text-color);
     text-shadow: 0 0 5px var(--glow-color);
-}
-
-@media screen and (max-width: 768px) {
-    #audio-controls {
-        bottom: 60px;
-        left: 10px;
-    }
-    
-    #audio-toggle {
-        padding: 8px 12px;
-        font-size: 1rem;
-    }
 }
 
