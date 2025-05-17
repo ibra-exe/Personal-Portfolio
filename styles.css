@@ -7,13 +7,290 @@
     --font-special: 'Orbitron', sans-serif;
 }
 
-body {
-    margin: 0;
-    font-family: var(--font-main);
-    background: url('https://i.pinimg.com/originals/8e/46/15/8e46150f790fbefe438d9c2767c32ad1.gif') repeat;
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+body {
+    font-family: var(--font-main);
+    /* background: url('https://i.pinimg.com/originals/8e/46/15/8e46150f790fbefe438d9c2767c32ad1.gif') repeat; */
+    background-color: #020004; /* Even darker purple base */
     color: var(--text-color);
     text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
+    position: relative;
+}
+
+/* CSS-based space background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 30% 40%, rgba(80, 37, 128, 0.25) 0%, rgba(0, 0, 0, 0) 70%),
+        radial-gradient(ellipse at 80% 40%, rgba(111, 51, 153, 0.25) 0%, rgba(0, 0, 0, 0) 70%),
+        radial-gradient(ellipse at 50% 70%, rgba(173, 78, 188, 0.15) 0%, rgba(0, 0, 0, 0) 75%),
+        radial-gradient(ellipse at 15% 60%, rgba(68, 14, 132, 0.2) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: -3;
+    pointer-events: none;
+}
+
+/* Stars effect - First layer (small stars) */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(1px 1px at 17px 41px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 53px 76px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 85px 112px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 119px 163px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 142px 203px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 176px 267px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 211px 321px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 237px 298px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 269px 247px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 293px 188px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 318px 143px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 342px 205px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 367px 264px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 389px 307px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 418px 371px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 437px 432px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 461px 488px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 482px 537px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 513px 583px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 546px 561px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 573px 512px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 594px 464px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 623px 423px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 651px 391px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 678px 342px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 703px 312px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 731px 356px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 763px 419px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 792px 463px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 824px 412px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 857px 367px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 889px 337px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 915px 403px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 943px 467px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 973px 517px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 998px 553px, #fff, rgba(0, 0, 0, 0));
+    background-size: 1000px 600px;
+    background-repeat: repeat;
+    z-index: -1;
+    opacity: 0.8;
+    animation: twinkle 8s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+/* Second layer of stars (medium stars) */
+.stars-medium {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(1.5px 1.5px at 39px 47px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 87px 94px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 132px 158px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 183px 219px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 227px 173px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 271px 129px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 317px 203px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 361px 257px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 408px 309px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 453px 363px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 496px 312px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 543px 264px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 587px 318px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 631px 371px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 679px 427px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 723px 489px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 776px 537px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 823px 479px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 872px 417px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(1.5px 1.5px at 916px 357px, #fff, rgba(0, 0, 0, 0));
+    background-size: 950px 650px;
+    background-repeat: repeat;
+    z-index: -1;
+    opacity: 0;
+    animation: twinkle-medium 6s ease-in-out infinite alternate;
+}
+
+/* Third layer of stars (large stars) */
+.stars-large {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(2px 2px at 67px 83px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 132px 163px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 194px 237px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 263px 194px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 337px 283px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 413px 349px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 476px 417px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 524px 358px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 591px 293px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 657px 346px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 713px 413px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 773px 481px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 827px 423px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 895px 371px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0));
+    background-size: 900px 700px;
+    background-repeat: repeat;
+    z-index: -1;
+    opacity: 0;
+    animation: twinkle-large 10s ease-in-out infinite alternate;
+}
+
+/* Special bright stars - More randomly positioned */
+.bright-star-1 {
+    top: 15%;
+    left: 23%;
+    animation-delay: 0s;
+}
+
+.bright-star-2 {
+    top: 42%;
+    left: 78%;
+    animation-delay: 1s;
+}
+
+.bright-star-3 {
+    top: 73%;
+    left: 33%;
+    animation-delay: 2s;
+}
+
+.bright-star-4 {
+    top: 27%;
+    left: 57%;
+    animation-delay: 3s;
+}
+
+.bright-star-5 {
+    top: 63%;
+    left: 82%;
+    animation-delay: 2.5s;
+}
+
+.bright-star-6 {
+    top: 82%;
+    left: 12%;
+    animation-delay: 1.5s;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes twinkle-medium {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes twinkle-large {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes bright-twinkle {
+    0% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+}
+
+/* Star nebula effect */
+.nebula {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.2;
+    animation: nebula-movement 60s ease-in-out infinite alternate;
+}
+
+.nebula-1 {
+    background: radial-gradient(ellipse at 30% 40%, rgba(183, 102, 255, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.nebula-2 {
+    background: radial-gradient(ellipse at 70% 60%, rgba(132, 61, 198, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+    animation-delay: 20s;
+}
+
+.nebula-3 {
+    background: radial-gradient(ellipse at 50% 20%, rgba(168, 99, 230, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+    animation-delay: 40s;
+}
+
+@keyframes nebula-movement {
+    0% {
+        transform: translate(-5%, -5%) scale(1.1);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translate(5%, 5%) scale(1);
+        opacity: 0.25;
+    }
+    100% {
+        transform: translate(-5%, 5%) scale(1.1);
+        opacity: 0.2;
+    }
 }
 
 header {
@@ -947,7 +1224,22 @@ footer a:hover {
 
 /* Transparent background for embedded pages */
 body.transparent-bg {
-    background: transparent;
+    background: transparent !important;
+}
+
+body.transparent-bg::before,
+body.transparent-bg::after,
+body.transparent-bg .nebula,
+body.transparent-bg .shooting-star,
+body.transparent-bg .stars-medium,
+body.transparent-bg .stars-large,
+body.transparent-bg .bright-star,
+body.transparent-bg .galaxy-spiral,
+body.transparent-bg .cosmic-dust,
+body.transparent-bg .color-overlay,
+body.transparent-bg .star-cluster,
+body.transparent-bg .far-stars {
+    display: none;
 }
 
 /* Projects Page Styles */
@@ -1048,5 +1340,293 @@ body.transparent-bg {
     font-size: 0.7rem;
     color: var(--text-color);
     text-shadow: 0 0 5px var(--glow-color);
+}
+
+/* Shooting stars */
+.shooting-star {
+    position: fixed;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    transform-origin: top;
+}
+
+.shooting-star-1 {
+    top: 20%;
+    left: 25%;
+    box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.6);
+    animation: shooting-star-1 20s linear infinite;
+    animation-delay: 4s;
+}
+
+.shooting-star-2 {
+    top: 40%;
+    left: 67%;
+    box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.6);
+    animation: shooting-star-2 25s linear infinite;
+    animation-delay: 8s;
+}
+
+.shooting-star-3 {
+    top: 70%;
+    left: 45%;
+    box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.6);
+    animation: shooting-star-3 22s linear infinite;
+    animation-delay: 15s;
+}
+
+.shooting-star-4 {
+    top: 60%;
+    left: 82%;
+    box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.6);
+    animation: shooting-star-4 30s linear infinite;
+    animation-delay: 18s;
+}
+
+.shooting-star-5 {
+    top: 35%;
+    left: 15%;
+    box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.6);
+    animation: shooting-star-1 28s linear infinite;
+    animation-delay: 12s;
+}
+
+.shooting-star-6 {
+    top: 80%;
+    left: 70%;
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.7);
+    animation: shooting-star-3 18s linear infinite;
+    animation-delay: 6s;
+}
+
+@keyframes shooting-star-1 {
+    0% {
+        opacity: 0;
+        height: 0;
+        transform: translateY(0) rotate(15deg);
+    }
+    0.5% {
+        opacity: 1;
+        height: 80px;
+    }
+    2% {
+        opacity: 1;
+        transform: translateY(150px) rotate(15deg);
+    }
+    2.5% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(150px) rotate(15deg);
+    }
+}
+
+@keyframes shooting-star-2 {
+    0% {
+        opacity: 0;
+        height: 0;
+        transform: translateY(0) rotate(10deg);
+    }
+    0.5% {
+        opacity: 1;
+        height: 90px;
+    }
+    2% {
+        opacity: 1;
+        transform: translateY(180px) rotate(10deg);
+    }
+    2.5% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(180px) rotate(10deg);
+    }
+}
+
+@keyframes shooting-star-3 {
+    0% {
+        opacity: 0;
+        height: 0;
+        transform: translateY(0) rotate(-8deg);
+    }
+    0.5% {
+        opacity: 1;
+        height: 70px;
+    }
+    2% {
+        opacity: 1;
+        transform: translateY(140px) rotate(-8deg);
+    }
+    2.5% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(140px) rotate(-8deg);
+    }
+}
+
+@keyframes shooting-star-4 {
+    0% {
+        opacity: 0;
+        height: 0;
+        transform: translateY(0) rotate(-12deg);
+    }
+    0.5% {
+        opacity: 1;
+        height: 100px;
+    }
+    2% {
+        opacity: 1;
+        transform: translateY(200px) rotate(-12deg);
+    }
+    2.5% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(200px) rotate(-12deg);
+    }
+}
+
+/* Galaxy spiral effect */
+.galaxy-spiral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(
+        rgba(0, 0, 0, 0) 0deg,
+        rgba(80, 37, 128, 0.05) 60deg,
+        rgba(111, 51, 153, 0.08) 120deg,
+        rgba(143, 59, 186, 0.08) 180deg,
+        rgba(173, 78, 188, 0.05) 240deg,
+        rgba(68, 14, 132, 0.08) 300deg,
+        rgba(0, 0, 0, 0) 360deg
+    );
+    opacity: 0.3;
+    z-index: -2;
+    transform-origin: 65% 45%;
+    transform: scale(3.5);
+    filter: blur(50px);
+    animation: spiral-rotate 180s linear infinite;
+    pointer-events: none;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+@keyframes spiral-rotate {
+    from {
+        transform: scale(3.5) rotate(0deg);
+    }
+    to {
+        transform: scale(3.5) rotate(360deg);
+    }
+}
+
+/* Cosmic dust particles */
+.cosmic-dust {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 25px 150px, rgba(255, 163, 253, 0.3), rgba(0, 0, 0, 0) 20px),
+        radial-gradient(1px 1px at 150px 350px, rgba(200, 147, 248, 0.3), rgba(0, 0, 0, 0) 25px),
+        radial-gradient(1px 1px at 300px 250px, rgba(168, 127, 255, 0.3), rgba(0, 0, 0, 0) 30px),
+        radial-gradient(1px 1px at 450px 550px, rgba(147, 107, 240, 0.3), rgba(0, 0, 0, 0) 20px),
+        radial-gradient(1px 1px at 600px 350px, rgba(201, 135, 255, 0.3), rgba(0, 0, 0, 0) 25px),
+        radial-gradient(1px 1px at 750px 550px, rgba(163, 108, 247, 0.3), rgba(0, 0, 0, 0) 30px),
+        radial-gradient(1px 1px at 950px 350px, rgba(146, 80, 255, 0.3), rgba(0, 0, 0, 0) 25px);
+    filter: blur(4px);
+    z-index: -2;
+    opacity: 0.2;
+    animation: dust-drift 120s ease-in-out infinite alternate;
+    pointer-events: none;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+@keyframes dust-drift {
+    0% {
+        transform: translateX(-20px) translateY(-10px);
+    }
+    100% {
+        transform: translateX(20px) translateY(10px);
+    }
+}
+
+/* Color overlay */
+.color-overlay {
+    display: none; /* Hide this element as it's causing the box effect */
+}
+
+/* Star clusters */
+.star-cluster {
+    position: fixed;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 10%, rgba(0, 0, 0, 0) 70%);
+    opacity: 0.3;
+    z-index: -2;
+    filter: blur(3px);
+    pointer-events: none;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.star-cluster-1 {
+    top: 25%;
+    left: 20%;
+    width: 300px;
+    height: 300px;
+}
+
+.star-cluster-2 {
+    top: 60%;
+    left: 75%;
+    width: 250px;
+    height: 250px;
+}
+
+.star-cluster-3 {
+    top: 70%;
+    left: 30%;
+    width: 200px;
+    height: 200px;
+}
+
+.star-cluster-4 {
+    top: 15%;
+    left: 65%;
+    width: 350px;
+    height: 350px;
+    opacity: 0.3;
+}
+
+/* Far away stars (tiny dots) */
+.far-stars {
+    display: none; /* Hide this element as it's causing the line of dots */
 }
 
