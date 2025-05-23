@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ibrahim Shaheen's work experience and career history - Horizontal Timeline">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"></noscript>
+    <title>Experience - Horizontal Timeline</title>
+    <style>
+        .experience-container {
+            width: 100vw;
+            height: 100vh;
+            min-height: 600px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        
+        .timeline {
+            position: relative;
+            display: flex;
+            min-width: 2200px;
+            height: 350px;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        
+        /* The horizontal line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: var(--glow-color);
+            box-shadow: 0 0 8px var(--glow-color);
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        
+        .container {
+            min-width: 320px;
+            max-width: 350px;
+            margin: 0 40px;
+            white-space: normal;
+            display: inline-block;
+            position: relative;
+            height: 350px;
+        }
+        
+        /* Add circles on the timeline */
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border: 3px solid var(--glow-color);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--glow-color);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        
+        .content {
+            background: rgba(80, 37, 128, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(183, 102, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: absolute;
+            left: 50%;
+            width: 90%;
+            max-width: 320px;
+        }
+        
+        /* Odd: above the timeline */
+        .container:nth-child(odd) .content {
+            bottom: 54%;
+            transform: translateX(-50%) translateY(-10px);
+        }
+        /* Even: below the timeline */
+        .container:nth-child(even) .content {
+            top: 54%;
+            transform: translateX(-50%) translateY(10px);
+        }
+        
+        .company {
+            color: var(--text-color);
+            margin-bottom: 10px;
+            font-family: var(--font-special);
+            font-size: 1.4rem;
+        }
+        
+        .position {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-family: var(--font-special);
+            font-size: 1.1rem;
+        }
+        
+        .period {
+            color: #888;
+            margin-bottom: 10px;
+        }
+        
+        .summary, .description { display: none; }
+    </style>
+</head>
+<body class="transparent-bg">
+    <div class="experience-container">
+        <div class="timeline">
+            <div class="container">
+                <div class="content">
+                    <h3 class="company">NEOM</h3>
+                    <div class="position">People Technology Senior Specialist</div>
+                    <div class="period">Sep 2023 - Present</div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="content">
+                    <h3 class="company">NEOM</h3>
+                    <div class="position">People Technology Specialist</div>
+                    <div class="period">Sep 2022 - Sep 2023</div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="content">
+                    <h3 class="company">NEOM</h3>
+                    <div class="position">People Technology Analyst</div>
+                    <div class="period">Jun 2021 - Sep 2022</div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="content">
+                    <h3 class="company">NEOM</h3>
+                    <div class="position">People Technology Intern</div>
+                    <div class="period">Mar 2021 - Jun 2021</div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="content">
+                    <h3 class="company">Misk Academy</h3>
+                    <div class="position">Software Engineer Intern</div>
+                    <div class="period">Nov 2020 - Mar 2021</div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="content">
+                    <h3 class="company">Crystal Inspection Services</h3>
+                    <div class="position">IT Manager</div>
+                    <div class="period">Oct 2019 - Jan 2020</div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="content">
+                    <h3 class="company">Tokyo Institute of Technology</h3>
+                    <div class="position">Collaborative Instructor - Computer Science</div>
+                    <div class="period">Mar 2016 - Mar 2019</div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="content">
+                    <h3 class="company">株式会社クオーレ (Cuore Inc.)</h3>
+                    <div class="position">Web Administrator, Social Media Manager and Interpreter</div>
+                    <div class="period">May 2018 - Sep 2018</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
