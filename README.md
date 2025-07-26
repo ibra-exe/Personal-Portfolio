@@ -1,6 +1,7 @@
 # Ibrahim Shaheen - Personal Portfolio buitl with AI
 
 A responsive personal website with a cyberpunk aesthetic, built using HTML, CSS, JavaScript and AI.
+URL: https://ibra-exe.github.io/Personal-Portfolio/
 
 ## Features
 
