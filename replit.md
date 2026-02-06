@@ -26,5 +26,13 @@ A responsive personal portfolio website with a cyberpunk/space-themed aesthetic,
 - Served via `npx serve` on port 5000
 - Deployed as a static site with `.` as the public directory
 
+## Design Notes
+- **Layout**: Flexbox column layout on body with footer fixed at bottom; iframe takes `flex: 1` to fill remaining space
+- **Footer spacing**: Uses `--footer-height` CSS custom property for padding-bottom, adjusted per breakpoint
+- **Breakpoints**: Three responsive breakpoints at 900px (tablet), 600px (phone), 380px (small phone)
+- **Iframe pattern**: Content pages scroll within the iframe for long content; embedded pages use `body.transparent-bg` to avoid inheriting flex layout
+- **Future plans**: User wants to convert to a web app with editable sections
+
 ## Recent Changes
+- 2026-02-06: Comprehensive responsive design overhaul - fixed content clipping, flexible iframe height, rewrote media queries with 3 breakpoints, responsive navbar/grids/typography
 - 2026-02-06: Initial Replit setup - configured static file server and deployment
