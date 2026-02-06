@@ -1552,6 +1552,79 @@ footer a:hover {
     transform: translateY(-3px);
 }
 
+@media screen and (max-width: 600px) {
+    .about-container {
+        padding: 10px 8px;
+    }
+
+    .about-heading {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .profile-container {
+        margin-bottom: 5px;
+    }
+
+    .profile-frame {
+        max-width: 180px;
+    }
+
+    .about-info {
+        padding: 14px;
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .about-text {
+        font-size: 0.9rem;
+        min-height: auto;
+        line-height: 1.5;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .skill-item {
+        padding: 10px;
+        font-size: 0.85rem;
+        min-height: 44px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .about-heading {
+        font-size: 1.4rem;
+    }
+
+    .about-text {
+        font-size: 0.84rem;
+        min-height: auto;
+        line-height: 1.45;
+    }
+
+    .profile-frame {
+        max-width: 140px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+
+    .skill-item {
+        font-size: 0.78rem;
+        padding: 8px;
+    }
+}
+
 /* Experience Page Styles */
 .experience-container {
     max-width: 1000px;
@@ -1663,6 +1736,129 @@ footer a:hover {
 
 .description {
     line-height: 1.5;
+}
+
+@media screen and (max-width: 900px) {
+    .timeline::before {
+        left: 31px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 55px;
+        padding-right: 15px;
+        margin-bottom: 40px;
+    }
+
+    .right, .left {
+        left: 0;
+    }
+
+    .right::after, .left::after {
+        left: 17px;
+    }
+
+    .company {
+        font-size: 1.2rem;
+    }
+
+    .position {
+        font-size: 0.95rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .content {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .experience-container {
+        padding: 6px 4px;
+    }
+
+    .timeline {
+        padding-top: 10px;
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .left::after, .right::after {
+        display: none;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 14px;
+    }
+
+    .right, .left {
+        left: 0;
+    }
+
+    .content {
+        padding: 14px 12px;
+        border-left: 3px solid var(--glow-color);
+    }
+
+    .company {
+        font-size: 1.1rem;
+    }
+
+    .position {
+        font-size: 0.92rem;
+    }
+
+    .period {
+        font-size: 0.82rem;
+    }
+
+    .description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .experience-container {
+        padding: 4px 2px;
+    }
+
+    .container {
+        padding: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        padding: 12px 10px;
+    }
+
+    .company {
+        font-size: 1rem;
+    }
+
+    .position {
+        font-size: 0.85rem;
+    }
+
+    .period {
+        font-size: 0.75rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
 }
 
 /* Hidden audio player */
