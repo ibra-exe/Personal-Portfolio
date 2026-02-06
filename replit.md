@@ -31,8 +31,14 @@ A responsive personal portfolio website with a cyberpunk/space-themed aesthetic,
 - **Footer spacing**: Uses `--footer-height` CSS custom property for padding-bottom, adjusted per breakpoint
 - **Breakpoints**: Three responsive breakpoints at 900px (tablet), 600px (phone), 380px (small phone)
 - **Iframe pattern**: Content pages scroll within the iframe for long content; embedded pages use `body.transparent-bg` to avoid inheriting flex layout
+- **Touch targets**: All interactive elements (nav links, buttons, cards) have min-height 44px on mobile
+- **Touch support**: Uses `@media (hover: none)` to disable hover transforms on touch devices, adds `:active` feedback
+- **Accessibility**: Supports `prefers-reduced-motion` to disable animations
+- **Mobile performance**: Shooting stars, star clusters hidden on screens <600px; nebula opacity reduced
+- **iOS fixes**: `-webkit-text-size-adjust: 100%`, `-webkit-overflow-scrolling: touch` on embedded pages
 - **Future plans**: User wants to convert to a web app with editable sections
 
 ## Recent Changes
+- 2026-02-06: Mobile phone optimization - increased touch targets to 44px, tightened spacing for phone widths, added touch/hover media queries, iOS scrolling fixes, reduced animations on mobile for performance, added prefers-reduced-motion support
 - 2026-02-06: Comprehensive responsive design overhaul - fixed content clipping, flexible iframe height, rewrote media queries with 3 breakpoints, responsive navbar/grids/typography
 - 2026-02-06: Initial Replit setup - configured static file server and deployment
