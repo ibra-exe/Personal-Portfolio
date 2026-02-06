@@ -8,7 +8,12 @@ function initTypewriter(targetId, text, speed = 50) {
     const typeTarget = document.getElementById(targetId);
     if (!typeTarget) return;
     
+    typeTarget.textContent = text;
+    const fullHeight = typeTarget.scrollHeight;
+    typeTarget.style.height = fullHeight + "px";
+    typeTarget.style.minHeight = fullHeight + "px";
     typeTarget.textContent = "";
+    
     let charIndex = 0;
 
     function typeChar() {
