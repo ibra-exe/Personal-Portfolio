@@ -5,6 +5,7 @@
     --glow-color: #b766ff;
     --font-main: 'Arial', sans-serif;
     --font-special: 'Orbitron', sans-serif;
+    --footer-height: 55px;
 }
 
 * {
@@ -25,17 +26,20 @@ html {
 
 body {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    padding-bottom: var(--footer-height);
     border: none;
     outline: none;
     font-family: var(--font-main);
-    background-color: #020004; /* Even darker purple base */
+    background-color: #020004;
     color: var(--text-color);
     text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 /* CSS-based space background */
@@ -356,14 +360,17 @@ header {
     font-family: var(--font-special);
     font-size: 3rem;
     text-align: center;
-    padding: 20px 0;
-    margin: 30px 0;
+    padding: 15px 0;
+    margin: 20px 0 10px;
     text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
+    flex-shrink: 0;
 }
 
 .navbar {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    flex-shrink: 0;
 }
 
 .navbar a {
@@ -474,12 +481,13 @@ footer a:hover {
 
 .home-container {
     position: relative;
-    height: 70vh;
+    min-height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
+    padding: 20px 10px;
 }
 
 .home-content-wrapper {
@@ -495,14 +503,14 @@ footer a:hover {
 
 .home-content {
     font-family: var(--font-special);
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: var(--text-color);
     text-align: center;
     text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
     white-space: pre-wrap;
-    overflow: hidden;
-    margin-bottom: 30px;
-    height: 180px;
+    overflow: visible;
+    margin-bottom: 20px;
+    min-height: 120px;
     max-width: 800px;
     position: relative;
     padding-bottom: 10px;
@@ -649,174 +657,368 @@ footer a:hover {
 }
 
 /* Media Queries for Responsive Design */
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 900px) {
     header {
-        font-size: 2rem;
-        margin: 15px 0;
+        font-size: 2.5rem;
+        margin: 15px 0 8px;
+        padding: 10px 0;
     }
-    
+
     .navbar a {
-        padding: 8px 15px;
-        margin: 0 5px;
+        padding: 8px 16px;
+        margin: 3px 5px;
         font-size: 0.9rem;
     }
-    
+
     .home-content {
+        font-size: 1.2rem;
+        min-height: 100px;
+    }
+
+    .home-highlights {
+        gap: 12px;
+    }
+
+    .highlight-item {
+        padding: 12px;
+        max-width: 180px;
+    }
+
+    .highlight-text {
+        font-size: 0.8rem;
+    }
+
+    .highlight-icon {
         font-size: 1.5rem;
     }
-    
-    .home-highlights {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .highlight-item {
-        width: 100%;
-        max-width: 250px;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        max-width: 250px;
-    }
-    
-    .footer-content {
-        flex-direction: row;
-        gap: 20px;
-        padding: 0 20px;
-        max-width: 100%;
-    }
-    
-    .footer-section {
-        width: auto;
-    }
-    
-    .footer-section:first-child {
-        align-items: flex-start;
-    }
-    
-    .footer-section:last-child {
-        align-items: flex-end;
-    }
-    
+
     .about-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
     }
-    
+
     .profile-container {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
-    
+
     .profile-frame {
-        max-width: 250px;
+        max-width: 200px;
     }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
+
+    .about-info {
+        max-height: none;
     }
-    
+
     .contact-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
     }
-    
-    .contact-card {
-        padding: 20px 15px;
-    }
-    
-    .contact-heading {
-        font-size: 2rem;
-    }
-    
-    .contact-form input,
-    .contact-form textarea {
-        padding: 10px;
-    }
-    
-    /* Place the timeline to the left */
+
     .timeline::before {
         left: 31px;
     }
-    
-    /* Full width containers */
+
     .container {
         width: 100%;
-        padding-left: 60px;
-        padding-right: 25px;
+        padding-left: 55px;
+        padding-right: 15px;
     }
-    
-    /* Make sure all containers are located to the right */
+
     .right, .left {
         left: 0;
     }
-    
-    /* Make sure all circles are located on the left */
+
     .right::after, .left::after {
         left: 17px;
     }
-    
-    .project-card {
+
+    .company {
+        font-size: 1.2rem;
+    }
+
+    .position {
+        font-size: 0.95rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .content {
         padding: 15px;
     }
-    
-    #audio-controls {
-        bottom: 55px;
-        left: 10px;
-    }
-    
-    #audio-toggle {
-        padding: 6px 10px;
-        font-size: 0.9rem;
+
+    .container {
+        margin-bottom: 40px;
     }
 }
 
-@media screen and (max-width: 480px) {
-    header {
-        font-size: 1.5rem;
+@media screen and (max-width: 600px) {
+    :root {
+        --footer-height: 50px;
     }
-    
+
+    header {
+        font-size: 2rem;
+        margin: 10px 0 5px;
+        padding: 8px 0;
+    }
+
     .navbar {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 0;
+        margin-bottom: 10px;
     }
-    
+
     .navbar a {
-        margin: 5px;
+        padding: 7px 12px;
+        margin: 3px 3px;
+        font-size: 0.8rem;
+        border-radius: 4px;
     }
-    
+
+    #contentFrame {
+        min-height: 250px;
+    }
+
+    .home-container {
+        padding: 10px 10px;
+    }
+
     .home-content {
+        font-size: 1rem;
+        min-height: 80px;
+    }
+
+    .home-content-wrapper {
+        padding: 10px;
+    }
+
+    .home-highlights {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .highlight-item {
+        width: 100%;
+        max-width: 260px;
+        padding: 10px;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .highlight-icon {
+        font-size: 1.3rem;
+        margin-bottom: 0;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .cta-button {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
+
+    .about-heading {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .about-text {
+        font-size: 0.9rem;
+        min-height: 150px;
+    }
+
+    .skills-heading {
         font-size: 1.2rem;
     }
-    
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .skill-item {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
     .contact-heading {
         font-size: 1.8rem;
     }
-    
+
     .contact-intro {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
-    
-    .about-heading {
-        font-size: 1.8rem;
-    }
-    
-    .skills-heading {
-        font-size: 1.3rem;
-    }
-    
-    .footer-content {
-        padding: 0 15px;
-    }
-    
-    .social-links-footer {
+
+    .contact-grid {
+        grid-template-columns: 1fr;
         gap: 10px;
     }
-    
+
+    .contact-card {
+        padding: 15px 12px;
+    }
+
+    .contact-icon {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+
+    .contact-label {
+        font-size: 1rem;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        gap: 10px;
+        padding: 0 12px;
+    }
+
+    .copyright {
+        font-size: 0.65rem;
+    }
+
+    .footer-tagline {
+        font-size: 0.6rem;
+    }
+
+    .social-links-footer {
+        gap: 8px;
+    }
+
     .social-links-footer a {
+        font-size: 1rem;
+    }
+
+    .footer-credit {
+        font-size: 0.6rem;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .project-title {
         font-size: 1.1rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+
+    #audio-controls {
+        bottom: 50px;
+        left: 8px;
+    }
+
+    #audio-toggle {
+        padding: 5px 8px;
+        font-size: 0.85rem;
+    }
+
+    .experience-container {
+        padding: 10px;
+    }
+
+    .container {
+        padding-left: 45px;
+        padding-right: 10px;
+        margin-bottom: 30px;
+    }
+
+    .content {
+        padding: 12px;
+    }
+
+    .company {
+        font-size: 1rem;
+    }
+
+    .position {
+        font-size: 0.85rem;
+    }
+
+    .period {
+        font-size: 0.8rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .left::after, .right::after {
+        width: 18px;
+        height: 18px;
+        left: 19px;
+    }
+
+    .timeline::before {
+        left: 27px;
+    }
+
+    .shape {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    :root {
+        --footer-height: 50px;
+    }
+
+    header {
+        font-size: 1.6rem;
+        margin: 8px 0 4px;
+        padding: 5px 0;
+    }
+
+    .navbar a {
+        padding: 6px 9px;
+        margin: 2px 2px;
+        font-size: 0.72rem;
+    }
+
+    .home-content {
+        font-size: 0.85rem;
+    }
+
+    .highlight-text {
+        font-size: 0.75rem;
+    }
+
+    .about-heading {
+        font-size: 1.5rem;
+    }
+
+    .about-text {
+        font-size: 0.85rem;
+    }
+
+    .contact-heading {
+        font-size: 1.5rem;
+    }
+
+    .footer-content {
+        padding: 0 8px;
+    }
+
+    .copyright {
+        font-size: 0.6rem;
+    }
+
+    .social-links-footer a {
+        font-size: 0.9rem;
     }
 }
 
@@ -832,8 +1034,7 @@ footer a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    min-height: 70vh;
+    padding: 20px 15px;
 }
 
 .about-content {
@@ -911,7 +1112,7 @@ footer a:hover {
     padding: 15px;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(183, 102, 255, 0.2);
-    height: 370px;
+    max-height: 400px;
     overflow-y: auto;
 }
 
@@ -1277,13 +1478,16 @@ footer a:hover {
 /* Content iframe */
 #contentFrame {
     width: 100%;
-    height: 70vh;
+    flex: 1;
+    min-height: 300px;
     border: none;
 }
 
 /* Transparent background for embedded pages */
 body.transparent-bg {
     background: transparent !important;
+    padding-bottom: 0;
+    display: block;
 }
 
 body.transparent-bg::before,
