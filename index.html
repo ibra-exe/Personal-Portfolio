@@ -1,174 +1,222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ibrahim Shaheen's personal website - Software Engineer and Technology Enthusiast">
-    <meta property="og:title" content="Ibra - Personal Website">
-    <meta property="og:description" content="Software Engineer | Technology Enthusiast | Digital Explorer">
-    <meta property="og:type" content="website">
-    <title>Ibra</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Ibrahim Shaheen's personal website - Software Engineer and Technology Enthusiast"
+        />
+        <meta property="og:title" content="Ibra - Personal Website" />
+        <meta
+            property="og:description"
+            content="Software Engineer | Technology Enthusiast | Digital Explorer"
+        />
+        <meta property="og:type" content="website" />
+        <title>Ibra</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        />
+    </head>
 
-<script>
-    function loadContent(page) {
-        document.getElementById("contentFrame").src = page;
-    }
-    
-    // Audio player handling
-    document.addEventListener('DOMContentLoaded', function() {
-        const audioPlayer = document.getElementById('audioPlayer');
-        const audioToggle = document.getElementById('audio-toggle');
-        const playIcon = document.getElementById('play-icon');
-        const pauseIcon = document.getElementById('pause-icon');
-        
-        // Function to update button state
-        function updateAudioButton(isPlaying) {
-            if (isPlaying) {
-                playIcon.style.display = 'none';
-                pauseIcon.style.display = 'inline-block';
-            } else {
-                playIcon.style.display = 'inline-block';
-                pauseIcon.style.display = 'none';
-            }
+    <script>
+        function loadContent(page) {
+            document.getElementById("contentFrame").src = page;
         }
-        
-        // Try to play audio automatically
-        const playPromise = audioPlayer.play();
-        
-        if (playPromise !== undefined) {
-            playPromise.then(() => {
-                // Autoplay started successfully
-                updateAudioButton(true);
-            }).catch(error => {
-                // Auto-play was prevented
-                updateAudioButton(false);
-                
-                // Show UI to let the user manually start playback
-                document.body.addEventListener('click', () => {
-                    audioPlayer.play().then(() => {
+
+        // Audio player handling
+        document.addEventListener("DOMContentLoaded", function () {
+            const audioPlayer = document.getElementById("audioPlayer");
+            const audioToggle = document.getElementById("audio-toggle");
+            const playIcon = document.getElementById("play-icon");
+            const pauseIcon = document.getElementById("pause-icon");
+
+            // Function to update button state
+            function updateAudioButton(isPlaying) {
+                if (isPlaying) {
+                    playIcon.style.display = "none";
+                    pauseIcon.style.display = "inline-block";
+                } else {
+                    playIcon.style.display = "inline-block";
+                    pauseIcon.style.display = "none";
+                }
+            }
+
+            // Try to play audio automatically
+            const playPromise = audioPlayer.play();
+
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        // Autoplay started successfully
                         updateAudioButton(true);
+                    })
+                    .catch((error) => {
+                        // Auto-play was prevented
+                        updateAudioButton(false);
+
+                        // Show UI to let the user manually start playback
+                        document.body.addEventListener(
+                            "click",
+                            () => {
+                                audioPlayer.play().then(() => {
+                                    updateAudioButton(true);
+                                });
+                            },
+                            { once: true },
+                        );
                     });
-                }, { once: true });
-            });
-        }
-        
-        // Toggle play/pause when button is clicked
-        audioToggle.addEventListener('click', function() {
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-                updateAudioButton(true);
-            } else {
-                audioPlayer.pause();
-                updateAudioButton(false);
             }
-        });
-        
-        // Update button if audio ends (though it should loop)
-        audioPlayer.addEventListener('ended', function() {
-            updateAudioButton(false);
-        });
-        
-        // Update button if audio is paused elsewhere
-        audioPlayer.addEventListener('pause', function() {
-            updateAudioButton(false);
-        });
-        
-        // Update button if audio starts playing elsewhere
-        audioPlayer.addEventListener('play', function() {
-            updateAudioButton(true);
-        });
-    });
-</script>
 
-<body>
-    <!-- CSS-based galaxy background elements -->
-    <div class="nebula nebula-1"></div>
-    <div class="nebula nebula-2"></div>
-    <div class="nebula nebula-3"></div>
-    
-    <!-- Additional star layers -->
-    <div class="stars-medium"></div>
-    <div class="stars-large"></div>
-    
-    <!-- Galaxy effects that were missing -->
-    <div class="galaxy-spiral"></div>
-    <div class="cosmic-dust"></div>
-    
-    <!-- Star clusters -->
-    <div class="star-cluster star-cluster-1"></div>
-    <div class="star-cluster star-cluster-2"></div>
-    <div class="star-cluster star-cluster-3"></div>
-    <div class="star-cluster star-cluster-4"></div>
-    
-    <!-- Bright twinkling stars -->
-    <div class="bright-star bright-star-1"></div>
-    <div class="bright-star bright-star-2"></div>
-    <div class="bright-star bright-star-3"></div>
-    <div class="bright-star bright-star-4"></div>
-    <div class="bright-star bright-star-5"></div>
-    <div class="bright-star bright-star-6"></div>
-    
-    <!-- Shooting stars -->
-    <div class="shooting-star shooting-star-1"></div>
-    <div class="shooting-star shooting-star-2"></div>
-    <div class="shooting-star shooting-star-3"></div>
-    <div class="shooting-star shooting-star-4"></div>
-    <div class="shooting-star shooting-star-5"></div>
-    <div class="shooting-star shooting-star-6"></div>
-    
-    <!-- Local audio file player -->
-    <audio id="audioPlayer" autoplay loop>
-        <source src="files/Tarantulas.mp3#t=9" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    
-    <header>
-        Ibra
-    </header>
-    <div class="navbar">
-        <a href="#" onclick="loadContent('home.html')">Home</a>
-        <a href="#" onclick="loadContent('about.html')">About</a>
-        <a href="#" onclick="loadContent('experience.html')">Experience</a>
-        <!-- <a href="#" onclick="loadContent('experience2.html')">Experience2</a> -->
-        <a href="#" onclick="loadContent('projects.html')">Projects</a>
-        <a href="#" onclick="loadContent('contact.html')">Contact</a>
-    </div>
+            // Toggle play/pause when button is clicked
+            audioToggle.addEventListener("click", function () {
+                if (audioPlayer.paused) {
+                    audioPlayer.play();
+                    updateAudioButton(true);
+                } else {
+                    audioPlayer.pause();
+                    updateAudioButton(false);
+                }
+            });
 
-    <iframe id="contentFrame" src="home.html" title="Page Content"></iframe>
+            // Update button if audio ends (though it should loop)
+            audioPlayer.addEventListener("ended", function () {
+                updateAudioButton(false);
+            });
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="copyright">© 2025 Ibrahim Shaheen</div>
-                <div class="footer-tagline">Exploring the Digital Cosmos</div>
-            </div>
-            
-            <div class="footer-section">
-                <div class="social-links-footer">
-                    <a href="https://github.com/ibra-exe" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/ibrahim-shaheen/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://x.com/ibrahimium" target="_blank" rel="noopener" aria-label="X" class="x-icon">𝕏</a>
-                    <a href="mailto:ibra@outlook.jp" aria-label="Email"><i class="far fa-envelope"></i></a>
+            // Update button if audio is paused elsewhere
+            audioPlayer.addEventListener("pause", function () {
+                updateAudioButton(false);
+            });
+
+            // Update button if audio starts playing elsewhere
+            audioPlayer.addEventListener("play", function () {
+                updateAudioButton(true);
+            });
+        });
+    </script>
+
+    <body>
+        <!-- CSS-based galaxy background elements -->
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+        <div class="nebula nebula-3"></div>
+
+        <!-- Additional star layers -->
+        <div class="stars-medium"></div>
+        <div class="stars-large"></div>
+
+        <!-- Galaxy effects that were missing -->
+        <div class="galaxy-spiral"></div>
+        <div class="cosmic-dust"></div>
+
+        <!-- Star clusters -->
+        <div class="star-cluster star-cluster-1"></div>
+        <div class="star-cluster star-cluster-2"></div>
+        <div class="star-cluster star-cluster-3"></div>
+        <div class="star-cluster star-cluster-4"></div>
+
+        <!-- Bright twinkling stars -->
+        <div class="bright-star bright-star-1"></div>
+        <div class="bright-star bright-star-2"></div>
+        <div class="bright-star bright-star-3"></div>
+        <div class="bright-star bright-star-4"></div>
+        <div class="bright-star bright-star-5"></div>
+        <div class="bright-star bright-star-6"></div>
+
+        <!-- Shooting stars -->
+        <div class="shooting-star shooting-star-1"></div>
+        <div class="shooting-star shooting-star-2"></div>
+        <div class="shooting-star shooting-star-3"></div>
+        <div class="shooting-star shooting-star-4"></div>
+        <div class="shooting-star shooting-star-5"></div>
+        <div class="shooting-star shooting-star-6"></div>
+
+        <!-- Local audio file player -->
+        <audio id="audioPlayer" autoplay loop>
+            <source src="files/Tarantulas.mp3#t=9" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio>
+
+        <header>Ibra</header>
+        <div class="navbar">
+            <a href="#" onclick="loadContent('home.html')">Home</a>
+            <a href="#" onclick="loadContent('about.html')">About</a>
+            <a href="#" onclick="loadContent('experience.html')">Experience</a>
+            <!-- <a href="#" onclick="loadContent('experience2.html')">Experience2</a> -->
+            <a href="#" onclick="loadContent('projects.html')">Projects</a>
+            <a href="#" onclick="loadContent('contact.html')">Contact</a>
+        </div>
+
+        <iframe id="contentFrame" src="home.html" title="Page Content"></iframe>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="copyright">© 2026 Ibrahim Shaheen</div>
+                    <div class="footer-tagline">
+                        Exploring the Digital Cosmos
+                    </div>
                 </div>
-                <div class="footer-credit">Made with <i class="fas fa-code"></i> + <i class="fas fa-robot"></i></div>
+
+                <div class="footer-section">
+                    <div class="social-links-footer">
+                        <a
+                            href="https://github.com/ibra-exe"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="GitHub"
+                            ><i class="fab fa-github"></i
+                        ></a>
+                        <a
+                            href="https://www.linkedin.com/in/ibrahim-shaheen/"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="LinkedIn"
+                            ><i class="fab fa-linkedin"></i
+                        ></a>
+                        <a
+                            href="https://x.com/ibrahimium"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="X"
+                            class="x-icon"
+                            >𝕏</a
+                        >
+                        <a href="mailto:ibra@outlook.jp" aria-label="Email"
+                            ><i class="far fa-envelope"></i
+                        ></a>
+                    </div>
+                    <div class="footer-credit">
+                        Made with <i class="fas fa-code"></i> +
+                        <i class="fas fa-robot"></i>
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        <!-- Audio controls -->
-        <div id="audio-controls">
-            <button id="audio-toggle" aria-label="Play or pause background music">
-                <i class="fas fa-play" id="play-icon"></i>
-                <i class="fas fa-pause" id="pause-icon" style="display: none;"></i>
-                <i class="fas fa-music" id="music-icon"></i>
-            </button>
-        </div>
-    </footer>
-    
-</body>
+
+            <!-- Audio controls -->
+            <div id="audio-controls">
+                <button
+                    id="audio-toggle"
+                    aria-label="Play or pause background music"
+                >
+                    <i class="fas fa-play" id="play-icon"></i>
+                    <i
+                        class="fas fa-pause"
+                        id="pause-icon"
+                        style="display: none"
+                    ></i>
+                    <i class="fas fa-music" id="music-icon"></i>
+                </button>
+            </div>
+        </footer>
+    </body>
 </html>
