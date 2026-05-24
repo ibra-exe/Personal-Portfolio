@@ -28,7 +28,7 @@ function initTypewriter(targetId, text, speed = 50) {
 }
 
 // Define text constants
-const HOME_TEXT = "Hi, I'm Ibrahim Shaheen, Ibra for short. A Software Engineer by day and an Alien by... well, always – because let's face it, only an extraterrestrial could make sense of this human code chaos. Turns out my spaceship crashed here, so I decided to debug your Earth programs instead.";
+const HOME_TEXT = "Hi, I'm Ibrahim Shaheen, a Digital Transformation professional specializing in AI, people technology, and strategic digitalization. Currently at NEOM, I lead initiatives that turn complex processes into intelligent, automated systems, achieving a 70% reduction in manual workload and earning SAP's Best HCM Innovation & Automation Award in KSA.";
 const ABOUT_TEXT = "Hello! I'm Ibrahim Shaheen (Ibra), a Saudi Software Engineer and Technology Enthusiast born on May 16th, 1993.\n\nCurrently working as a People Technology Senior Specialist at NEOM, I focus on implementing innovative digital solutions that enhance workplace experiences.\n\nI'm passionate about leveraging technology to solve complex problems and create meaningful impact through AI, automation, and digital transformation.";
 
 // Auto-initialize based on page

@@ -18,91 +18,17 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="styles.css" />
         <link
-            href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap&display=swap"
-            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+            rel="preload"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
         />
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"></noscript>
         <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         />
     </head>
-
-    <script>
-        function loadContent(page) {
-            document.getElementById("contentFrame").src = page;
-        }
-
-        // Audio player handling
-        document.addEventListener("DOMContentLoaded", function () {
-            const audioPlayer = document.getElementById("audioPlayer");
-            const audioToggle = document.getElementById("audio-toggle");
-            const playIcon = document.getElementById("play-icon");
-            const pauseIcon = document.getElementById("pause-icon");
-
-            // Function to update button state
-            function updateAudioButton(isPlaying) {
-                if (isPlaying) {
-                    playIcon.style.display = "none";
-                    pauseIcon.style.display = "inline-block";
-                } else {
-                    playIcon.style.display = "inline-block";
-                    pauseIcon.style.display = "none";
-                }
-            }
-
-            // Try to play audio automatically
-            const playPromise = audioPlayer.play();
-
-            if (playPromise !== undefined) {
-                playPromise
-                    .then(() => {
-                        // Autoplay started successfully
-                        updateAudioButton(true);
-                    })
-                    .catch((error) => {
-                        // Auto-play was prevented
-                        updateAudioButton(false);
-
-                        // Show UI to let the user manually start playback
-                        document.body.addEventListener(
-                            "click",
-                            () => {
-                                audioPlayer.play().then(() => {
-                                    updateAudioButton(true);
-                                });
-                            },
-                            { once: true },
-                        );
-                    });
-            }
-
-            // Toggle play/pause when button is clicked
-            audioToggle.addEventListener("click", function () {
-                if (audioPlayer.paused) {
-                    audioPlayer.play();
-                    updateAudioButton(true);
-                } else {
-                    audioPlayer.pause();
-                    updateAudioButton(false);
-                }
-            });
-
-            // Update button if audio ends (though it should loop)
-            audioPlayer.addEventListener("ended", function () {
-                updateAudioButton(false);
-            });
-
-            // Update button if audio is paused elsewhere
-            audioPlayer.addEventListener("pause", function () {
-                updateAudioButton(false);
-            });
-
-            // Update button if audio starts playing elsewhere
-            audioPlayer.addEventListener("play", function () {
-                updateAudioButton(true);
-            });
-        });
-    </script>
 
     <body>
         <!-- CSS-based galaxy background elements -->
@@ -151,7 +77,6 @@
             <a href="#" onclick="loadContent('home.html')">Home</a>
             <a href="#" onclick="loadContent('about.html')">About</a>
             <a href="#" onclick="loadContent('experience.html')">Experience</a>
-            <!-- <a href="#" onclick="loadContent('experience2.html')">Experience2</a> -->
             <a href="#" onclick="loadContent('projects.html')">Projects</a>
             <a href="#" onclick="loadContent('contact.html')">Contact</a>
         </div>
@@ -218,5 +143,54 @@
                 </button>
             </div>
         </footer>
+
+        <script>
+            function loadContent(page) {
+                document.getElementById("contentFrame").src = page;
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const audioPlayer = document.getElementById("audioPlayer");
+                const audioToggle = document.getElementById("audio-toggle");
+                const playIcon = document.getElementById("play-icon");
+                const pauseIcon = document.getElementById("pause-icon");
+
+                function updateAudioButton(isPlaying) {
+                    if (isPlaying) {
+                        playIcon.style.display = "none";
+                        pauseIcon.style.display = "inline-block";
+                    } else {
+                        playIcon.style.display = "inline-block";
+                        pauseIcon.style.display = "none";
+                    }
+                }
+
+                const playPromise = audioPlayer.play();
+                if (playPromise !== undefined) {
+                    playPromise
+                        .then(() => { updateAudioButton(true); })
+                        .catch(() => {
+                            updateAudioButton(false);
+                            document.body.addEventListener("click", () => {
+                                audioPlayer.play().then(() => { updateAudioButton(true); });
+                            }, { once: true });
+                        });
+                }
+
+                audioToggle.addEventListener("click", function () {
+                    if (audioPlayer.paused) {
+                        audioPlayer.play();
+                        updateAudioButton(true);
+                    } else {
+                        audioPlayer.pause();
+                        updateAudioButton(false);
+                    }
+                });
+
+                audioPlayer.addEventListener("ended", () => updateAudioButton(false));
+                audioPlayer.addEventListener("pause", () => updateAudioButton(false));
+                audioPlayer.addEventListener("play", () => updateAudioButton(true));
+            });
+        </script>
     </body>
 </html>
