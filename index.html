@@ -81,7 +81,7 @@
             <a href="#" onclick="loadContent('contact.html')">Contact</a>
         </div>
 
-        <iframe id="contentFrame" src="home.html" title="Page Content"></iframe>
+        <iframe id="contentFrame" src="home.html" title="Page Content" allowtransparency="true"></iframe>
 
         <footer>
             <div class="footer-content">
@@ -90,6 +90,21 @@
                     <div class="footer-tagline">
                         Exploring the Digital Cosmos
                     </div>
+                </div>
+
+                <div id="audio-controls">
+                    <button
+                        id="audio-toggle"
+                        aria-label="Play or pause background music"
+                    >
+                        <i class="fas fa-play" id="play-icon"></i>
+                        <i
+                            class="fas fa-pause"
+                            id="pause-icon"
+                            style="display: none"
+                        ></i>
+                        <i class="fas fa-music" id="music-icon"></i>
+                    </button>
                 </div>
 
                 <div class="footer-section">
@@ -127,21 +142,6 @@
                 </div>
             </div>
 
-            <!-- Audio controls -->
-            <div id="audio-controls">
-                <button
-                    id="audio-toggle"
-                    aria-label="Play or pause background music"
-                >
-                    <i class="fas fa-play" id="play-icon"></i>
-                    <i
-                        class="fas fa-pause"
-                        id="pause-icon"
-                        style="display: none"
-                    ></i>
-                    <i class="fas fa-music" id="music-icon"></i>
-                </button>
-            </div>
         </footer>
 
         <script>
