@@ -1954,9 +1954,9 @@ footer a:hover {
 /* Content iframe */
 #contentFrame {
     width: 100%;
-    flex: 1;
-    min-height: 300px;
     border: none;
+    display: block;
+    overflow: hidden;
 }
 
 /* Transparent background for embedded pages */

@@ -145,9 +145,29 @@
         </footer>
 
         <script>
-            function loadContent(page) {
-                document.getElementById("contentFrame").src = page;
+            const frame = document.getElementById("contentFrame");
+
+            function resizeFrame() {
+                try {
+                    const body = frame.contentDocument && frame.contentDocument.body;
+                    if (body) {
+                        frame.style.height = "0px";
+                        frame.style.height = body.scrollHeight + "px";
+                    }
+                } catch(e) {}
             }
+
+            function loadContent(page) {
+                frame.src = page;
+            }
+
+            frame.addEventListener("load", function () {
+                resizeFrame();
+                try {
+                    const observer = new ResizeObserver(resizeFrame);
+                    observer.observe(frame.contentDocument.body);
+                } catch(e) {}
+            });
 
             document.addEventListener("DOMContentLoaded", function () {
                 const audioPlayer = document.getElementById("audioPlayer");
