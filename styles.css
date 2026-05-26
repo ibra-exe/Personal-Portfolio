@@ -17,7 +17,7 @@
 html {
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     margin: 0;
     padding: 0;
     border: none;
@@ -28,8 +28,8 @@ html {
 
 body {
     width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
+    height: 100%;
+    overflow: hidden;
     margin: 0;
     padding: 0;
     padding-bottom: var(--footer-height);
@@ -1954,9 +1954,11 @@ footer a:hover {
 /* Content iframe */
 #contentFrame {
     width: 100%;
+    flex: 1;
+    min-height: 0;
     border: none;
     display: block;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 /* Transparent background for embedded pages */
