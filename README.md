@@ -1,47 +1,59 @@
-# Ibrahim Shaheen - Personal Portfolio buitl with AI
+# Ibrahim Shaheen - Personal Portfolio
 
-A responsive personal website with a cyberpunk aesthetic, built using HTML, CSS, JavaScript and AI.
+A responsive personal portfolio website built with HTML, CSS, and Vanilla JavaScript, featuring a space/cyberpunk aesthetic.
 
-[Link](https://ibra-exe.github.io/Personal-Portfolio/)
+🔗 **Live:** [ibra-exe.github.io/Personal-Portfolio](https://ibra-exe.github.io/Personal-Portfolio/)
+
+---
+
+## About
+
+This portfolio was built to showcase my professional background in Digital Transformation, AI, and HRIS. It covers my work experience, projects, skills, education, and contact information, all wrapped in a custom space-themed UI with animated backgrounds, typewriter effects, and a fixed navigation system.
+
+---
 
 ## Features
 
-- Responsive design that works on mobile, tablet, and desktop
-- Typewriter text animation effects on multiple pages
-- Clean iframe-based navigation
-- Cyberpunk-inspired visual design
-- Contact links and social media integration
+- **Typewriter animation:** dynamic text effect on the Home and About pages
+- **Space-themed background:** animated nebulas, shooting stars, star clusters, and a galaxy spiral, all in pure CSS
+- **Responsive design:** fully optimized for mobile, tablet, and desktop
+- **iframe-based navigation:** seamless page transitions without full reloads
+- **Background music:** optional ambient audio with play/pause toggle
+- **Contact page:** links to LinkedIn, Email, X, and GitHub
 
-## Optimizations
+---
 
-This website has been optimized for:
+## Tech Stack
 
-- Performance: Reduced unnecessary HTTP requests and optimized JavaScript
-- Accessibility: Proper semantic HTML and responsive design
-- SEO: Added meta tags and descriptions
-- Mobile: Added media queries for different screen sizes
+| Layer | Technology |
+|---|---|
+| Markup | HTML5 |
+| Styling | CSS3 (Variables, Animations, Grid, Flexbox) |
+| Logic | Vanilla JavaScript |
+| Fonts | Google Fonts (Orbitron, Chakra Petch) |
+| Icons | Font Awesome 6.6 |
+| Hosting | GitHub Pages |
 
-## Technologies Used
+---
 
-- HTML5
-- CSS3 (with CSS Variables)
-- Vanilla JavaScript
-- Google Fonts (Orbitron)
-- Font Awesome icons
-
-## Setup
-
-Simply clone the repository and open `index.html` in a web browser, or deploy to any static web hosting service.
+## Project Structure
 
 ```
-git clone https://github.com/ibra-exe/personal-website.git
-cd personal-website
+├── index.html          # Main shell (header, navbar, footer, iframe)
+├── home.html           # Landing page
+├── about.html          # About, skills, education, languages, awards
+├── experience.html     # Work history timeline
+├── projects.html       # Project showcase
+├── contact.html        # Contact links
+├── styles.css          # Global styles and animations
+├── typewriter.js       # Reusable typewriter effect
+├── files/              # Static assets (audio, images)
+└── .claude/
+    └── launch.json     # Local dev server config
 ```
 
-## License
-
-This project is available for personal use.
+---
 
 ## Author
 
-Created by Ibrahim Shaheen
+**Ibrahim Shaheen** - [linkedin.com/in/ibrahim-shaheen](https://www.linkedin.com/in/ibrahim-shaheen/) · [github.com/ibra-exe](https://github.com/ibra-exe)
