@@ -32,7 +32,6 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    padding-bottom: var(--footer-height);
     border: none;
     outline: none;
     font-family: var(--font-main);
@@ -535,13 +534,55 @@ footer a:hover {
 
 @media screen and (max-width: 700px) {
     .home-layout {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 20px;
+        gap: 15px;
+    }
+
+    .home-top-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 
     .home-photo .profile-frame {
-        width: 150px;
+        width: 140px;
+    }
+
+    .home-text-box {
+        text-align: center;
+        width: 100%;
+    }
+
+    .home-content {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .home-highlights {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .highlight-item {
+        width: 100%;
+        max-width: 320px;
+        flex-direction: row;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .highlight-icon {
+        margin-bottom: 0;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 320px;
     }
 }
 
@@ -1052,32 +1093,27 @@ footer a:hover {
     }
 
     footer {
-        padding: 4px 0;
+        padding: 4px 8px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: space-between;
     }
 
     .footer-content {
-        flex-direction: row;
-        gap: 8px;
-        padding: 0 10px;
-        width: 100%;
+        display: contents;
     }
 
     #audio-controls {
         position: static;
         display: flex;
+        align-items: center;
         justify-content: center;
-        margin-bottom: 2px;
-        order: -1;
     }
 
     #audio-toggle {
-        padding: 5px 12px;
-        font-size: 0.8rem;
-        min-height: 44px;
-        min-width: 44px;
+        padding: 6px 10px;
+        font-size: 0.85rem;
     }
 
     .experience-container {
@@ -1959,6 +1995,7 @@ footer a:hover {
     border: none;
     display: block;
     overflow-y: auto;
+    background: transparent;
 }
 
 /* Transparent background for embedded pages */
@@ -2023,9 +2060,11 @@ body.transparent-bg .far-stars {
 }
 
 .project-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 10px;
-    padding: 5px 15px;
+    padding: 8px 15px;
     background-color: var(--primary-color);
     color: var(--text-color);
     text-decoration: none;
